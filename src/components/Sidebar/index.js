@@ -3,6 +3,8 @@ import { ContainerSidebar, ContentSidebar, MenuItem } from './styles'
 
 import { GiExitDoor } from 'react-icons/gi'
 
+import { Link } from 'react-router-dom'
+
 function Sidebar() {
     return (
         <>
@@ -11,14 +13,16 @@ function Sidebar() {
                     <h3>Dashboard</h3>
                 </header>
                 <ContentSidebar>
-                    <MenuItem>Dashboard</MenuItem>
-                    <MenuItem>User Profile</MenuItem>
+                    <Link to="/dashboard/home">
+                        <MenuItem>Dashboard</MenuItem>
+                    </Link>
+                    {/* <MenuItem>User Profile</MenuItem>
                     <MenuItem>Table List</MenuItem>
                     <MenuItem>Typegraphy</MenuItem>
                     <MenuItem>Icons</MenuItem>
                     <MenuItem>Maps</MenuItem>
                     <MenuItem>Notification</MenuItem>
-                    <MenuItem>TRL Support</MenuItem>
+                    <MenuItem>TRL Support</MenuItem> */}
                 </ContentSidebar>
                 <footer>
                     <button>

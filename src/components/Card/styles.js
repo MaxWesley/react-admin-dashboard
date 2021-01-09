@@ -7,12 +7,13 @@ export const ContainerCard = styled.div`
     background-color: #FFF;
 
     padding: 16px; 
-    padding-top: ${props => (props.type==="large" ? "128px" : null)};
+    padding-top: ${props => (props.type === "large" ? "128px" : null)};
     
     border: none;
     border-radius: 7px;
 
     margin-top: 32px;
+    margin-bottom: 32px;
     margin-right: 32px;
 
     position: relative;
@@ -33,24 +34,7 @@ export const ContainerCard = styled.div`
                 font-size: 14px;
                 font-weight: normal;
             }
-        }
-
-        td {
-            color: #020202aa;
-            
-            svg {
-                padding: 8px;
-
-                border-radius: 8px;
-                transition: all 0.2s;
-                :hover {
-                    cursor: pointer;
-                    background-color: #d2d2d244;
-                    filter: brightness(90%);
-                }
-            }
-        }
-        
+        }        
     }
 `;
 export const ThumbCard = styled.div`
