@@ -12,7 +12,7 @@ import { Main } from '../src/styles/GlobalStyles'
 
 // Pages
 import Home from './pages/home'
-import Login, { Cadastro } from './pages/Auth'
+import Login, { Cadastro, RecuperarSenha } from './pages/Auth'
 
 function Routes() {
     const [auth, setAuth] = useState(false);
@@ -36,6 +36,7 @@ function Routes() {
                         <Redirect exact from="/" to="/login" />
                         <Route path="/login" component={Login} exact />
                         <Route path="/cadastro" component={Cadastro} exact />
+                        <Route path="/recuperar-senha" component={RecuperarSenha} exact />
                     </Switch>
                 }
             </BrowserRouter>

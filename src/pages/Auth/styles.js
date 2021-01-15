@@ -1,10 +1,10 @@
 import styled from 'styled-components'
 
-export const ContainerLogin = styled.div`
+export const Container = styled.div`
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
+    justify-content: ${props => props.container === "recuperar-senha" ? "center" : "space-between"};
 
     width: 100vw;
 
@@ -39,13 +39,11 @@ export const ContainerLogin = styled.div`
     }
 `
 
-export const ContainerCadastro = styled(ContainerLogin)``
-
 export const ContainerForm = styled.form`
     position: relative;
 
     max-width: 380px;
-    background: rgb(32, 32, 36);
+    background: ${props => props.container === "recuperar-senha" ? null : "#202024"};
     
     padding: 64px;
 
@@ -152,6 +150,10 @@ export const ContainerForm = styled.form`
         :hover {
             filter: brightness(95%);
         }
+    }
+
+    .btn-recuperar {
+        margin-top: 16px;
     }
 
     p.voltar {

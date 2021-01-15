@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import { ContainerLogin, ContainerForm, ContainerCadastro } from './styles'
+import { Container, ContainerForm, ContainerCadastro } from './styles'
 
 import { Link } from 'react-router-dom'
 
@@ -13,7 +13,7 @@ function Login() {
     const [focused, setFocused] = useState(false)
     return (
         <>
-            <ContainerLogin>
+            <Container>
                 <div className="block">
                     {/* <h1>Melhor server <br />da atualidade</h1> */}
                 </div>
@@ -47,11 +47,13 @@ function Login() {
                         </div>
                     </div>
 
-                    <p><strong>Esqueci minha senha</strong></p>
+                    <Link to="/recuperar-senha">
+                        <p><strong>Esqueci minha senha</strong></p>
+                    </Link>
                     <button>Entrar</button>
                     <p>Não tem uma conta? <Link to="/cadastro"><strong>Registre-se</strong></Link></p>
                 </ContainerForm>
-            </ContainerLogin>
+            </Container>
         </>
     )
 }
@@ -61,7 +63,7 @@ export function Cadastro() {
 
     return (
         <>
-            <ContainerCadastro>
+            <Container>
                 <ContainerForm container="cadastro" focus={focused}>
                     <h2>Crie sua conta</h2>
                     <div>
@@ -136,8 +138,35 @@ export function Cadastro() {
                         <p className="voltar"><BsArrowLeft size={22} />Voltar para login</p>
                     </Link>
                 </ContainerForm>
-            </ContainerCadastro>
+            </Container>
         </>
+    )
+}
+
+export function RecuperarSenha() {
+    const [focused, setFocused] = useState()
+
+    return (
+        <Container container="recuperar-senha">
+            <ContainerForm container="recuperar-senha">
+                <h2 style={{textAlign: 'center', marginBottom: 8}}>Recuperar senha</h2>
+                <div>
+                    <div>
+                        <div>
+                            <MdEmail color={focused === 'email' ? "#f59300" : "#28272c"} />
+                            <input
+                                type="text"
+                                placeholder="Digite seu e-mail"
+                                onFocus={() => setFocused('email')}
+                                onBlur={() => setFocused(null)}
+                                required />
+                        </div>
+                    </div>
+                </div>
+                <button className="btn-recuperar">RECUPERAR</button>
+                <Link to="/login" className="btn-voltar"><p>Voltar</p></Link>
+            </ContainerForm>
+        </Container>
     )
 }
 

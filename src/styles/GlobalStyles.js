@@ -41,6 +41,19 @@ export const GlobalStyles = createGlobalStyle`
             }
         }
 
+        a.btn-voltar {
+            p {
+                width: 100%;
+                color: rgb(135, 134, 139);
+                font-size: 13px;
+                text-align: center;
+
+                :hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+
         table {
             font-family: arial, sans-serif;
             border-collapse: collapse;
