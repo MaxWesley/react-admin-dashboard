@@ -12,7 +12,7 @@ import { Main } from '../src/styles/GlobalStyles'
 
 // Pages
 import Home from './pages/home'
-import Login from './pages/login'
+import Login, { Cadastro } from './pages/Auth'
 
 function Routes() {
     const [auth, setAuth] = useState(false);
@@ -33,8 +33,9 @@ function Routes() {
                     </>
                     :
                     <Switch>
-                        <Redirect exact from="/" to="/dashboard/login" />
-                        <Route path="/dashboard/login" component={Login} exact />
+                        <Redirect exact from="/" to="/login" />
+                        <Route path="/login" component={Login} exact />
+                        <Route path="/cadastro" component={Cadastro} exact />
                     </Switch>
                 }
             </BrowserRouter>
